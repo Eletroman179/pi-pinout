@@ -99,6 +99,8 @@ def main(stdscr):
             line_to_print = line[:width - start_x_info]
             stdscr.addstr(start_y_info + i, start_x_info, line_to_print, curses.A_BOLD | curses.color_pair(4))  # Cyan for the info text
     
+    stdscr.addstr(height-1,0,"press any key to contuine ...",curses.A_BOLD | curses.color_pair(5))
+    
     stdscr.attroff(curses.color_pair(2))
 
     # Refresh the screen to display
@@ -108,4 +110,7 @@ def main(stdscr):
     stdscr.getch()
 
 # Run the curses application
-curses.wrapper(main)
+try:
+   curses.wrapper(main)
+except curses.error:
+   print("term too small")
