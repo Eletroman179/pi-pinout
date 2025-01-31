@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Variables
+REPO_URL="https://raw.githubusercontent.com/Eletroman179/pi-pinout/main/main.py"
+INSTALL_PATH="/usr/local/bin/pi-pinout"
+
+# Download the Python file from GitHub using sudo to ensure permission
+echo "Downloading pi-pinout from GitHub..."
+sudo curl -L "$REPO_URL" -o "$INSTALL_PATH"
+
+# Make the script executable
+echo "Making pi-pinout executable..."
+sudo chmod +x "$INSTALL_PATH"
+
+# Success message
+echo "pi-pinout installed successfully. You can now run it with the command 'pi-pinout'."
