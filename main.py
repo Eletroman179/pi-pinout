@@ -69,7 +69,7 @@ def main(stdscr):
        GND (39) (40) GPIO21
     """
     
-    # Get the screen size
+    # Get the screen size in y, x
     height, width = stdscr.getmaxyx()
 
     # Calculate the center position of the ASCII art
